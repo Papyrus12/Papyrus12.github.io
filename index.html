@@ -7,4 +7,27 @@
     <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;background-color: rgb(86, 148, 84);">
         <a class="button" style="margin-left:825px; margin-top:50px;" href="http://Kabsite.com">This is not a scam</a>
         <a class="button" style="margin-left:800px; margin-top:100px" href="http://Kabsite.com">but maybe this is a scam?</a>
+
+
+
+        <h5> send me a message</h5>
+        <input type="text" id="myUser" value="here lies username">
+        <input type="text" id="myText" value="hereliesmessage">
+        <button onclick="sendMessage()">Send</button>
+
     </body>
+
+    <script>
+        function sendMessage() {
+          const request = new XMLHttpRequest();
+          request.open("POST", "https://discord.com/api/webhooks/886369689394085968/KvhChyU_gzLWlEmftRoIlbxRM4DbUI84v-h_dsDS08VU5jopRtipRuVPSBaS1es7wETd");
+    
+          request.setRequestHeader('Content-type', 'application/json');
+          const params = {
+            username: document.getElementById("myUser").value,
+            content: document.getElementById("myText").value
+          }
+    
+          request.send(JSON.stringify(params));
+        }
+      </script>
